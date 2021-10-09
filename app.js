@@ -1,36 +1,40 @@
 const p1button = document.querySelector('#p1button');
 const p2button = document.querySelector('#p2button');
-
+const p1display = document.querySelector('#p1display');
+const p2display = document.querySelector('#p2display');
+const winner = document.querySelector('#winner');
 let p1score = 0, p2score = 0;
 let winningScore = 5;
 
 p1button.addEventListener('click', function (){
     p1score++; 
-    document.querySelector("#p1display").innerHTML = p1score;
+    p1display.innerHTML = p1score;
     if(p1score === winningScore){
-        document.querySelector("#p1button").disabled = true;
-        document.querySelector("#p2button").disabled = true;
-        document.querySelector('#winner').innerHTML = "Player 1 Wins";
+        p1button.disabled = true;
+        p2button.disabled = true;
+        winner.innerHTML = "Player 1 Wins";
     }
 })
 
 p2button.addEventListener('click', function (){
     p2score++;
-    document.querySelector("#p2display").innerHTML = p2score;
+    p2display.innerHTML = p2score;
     if(p2score === winningScore){
-        document.querySelector("#p1button").disabled = true;
-        document.querySelector("#p2button").disabled = true;
-        document.querySelector('#winner').innerHTML = "Player 2 Wins";
+        p1button.disabled = true;
+        p2button.disabled = true;
+        winner.innerHTML = "Player 2 Wins";
     }
 })
 
 
 reset.addEventListener('click', function (){
-    document.querySelector("#p2display").innerHTML = 0;
-    document.querySelector("#p1display").innerHTML = 0;
-    document.querySelector("#p1button").disabled = false;
-    document.querySelector("#p2button").disabled = false;
-    document.querySelector('#winner').innerHTML = "";
+    p1score = 0;
+    p2score = 0;
+    p1display.innerHTML = 0;
+    p2display.innerHTML = 0;
+    p1button.disabled = false;
+    p2button.disabled = false; 
+    winner.innerHTML = "";
 })
 
 
