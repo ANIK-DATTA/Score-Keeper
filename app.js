@@ -1,8 +1,14 @@
 const p1button = document.querySelector('#p1button');
 const p2button = document.querySelector('#p2button');
+const setbtn = document.querySelector('#setBtn');
 
 let p1score = 0, p2score = 0;
-let winningScore = 5;
+let winningScore;
+
+setbtn.addEventListener('click', function(){
+    winningScore = parseInt(document.querySelector('#winningScore').value);
+    console.log(winningScore);
+})
 
 p1button.addEventListener('click', function (){
     p1score++; 
